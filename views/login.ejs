@@ -1,0 +1,24 @@
+<%- include('partials/header') -%>
+
+    <% if (locals.messages.errors) { %>
+        <% messages.errors.forEach( el => { %>
+            <div class="alert alert-danger"><%= el.msg %></div>
+        <% }) %>
+    <% } %>
+    <% if (locals.messages.info) { %>
+        <% messages.info.forEach( el => { %>
+            <div class="alert alert-danger"><%= el.msg %></div>
+        <% }) %>
+    <% } %>
+
+    <div class="container card text-center shadow " style="margin: 7rem auto; min-width: 300px; max-width: 450px; height: auto">
+    <form action="/login" method="POST" class="btn-group flex-column">
+        <!-- Find out how to switch to a userName login -->
+        <input type="email" name="email" placeholder="Email" class="form-control btn-lg my-2">
+        <input type="password" name="password" placeholder="Password" class="form-control btn-lg my-2">
+        <input type="submit" class="btn btn-outline-primary btn-lg col">
+        <p class="my-0">Don't have an account yet? <a href="/signup">SIGN UP</a></p>
+    </form>
+    </div>
+
+    <%- include('partials/footer') -%>

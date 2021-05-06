@@ -1,0 +1,28 @@
+<!-- Signup view for teacher -->
+
+<%- include('partials/header') -%>
+    <% if (locals.messages.errors) { %>
+        <% messages.errors.forEach( el => { %>
+            <div class="alert alert-danger"><%= el.msg %></div>
+        <% }) %>
+    <% } %>
+    <div class="container card text-center shadow " style="margin: 7rem auto; min-width: 300px; max-width: 450px; height: auto">
+    <form action="/signup" method="POST" class="btn-group flex-column">
+        <input type="text" name="userName" placeholder="User Name" class="form-control btn-lg my-2">
+
+        <!-- Do I want to use same names at parent/child? benefits? cons? -->
+        <input type="text" name="firstNameTeacher" placeholder="Teacher First Name" class="form-control btn-lg my-2">
+        <input type="text" name="lastNameTeacher" placeholder="Teacher Last Name" class="form-control btn-lg my-2">
+        <input type="email" name="email" placeholder="Teacher's Email" class="form-control btn-lg my-2">
+        <input type="password" name="password" placeholder="Teacher's Password" class="form-control btn-lg my-2">
+        <input type="password" name="confirmPassword" placeholder="Confirm Teacher's Password" class="form-control btn-lg my-2">
+
+        <!-- Include school input to help keep unique classrooms? How to implement? -->
+        <input type="text" name="classroomName" placeholder="Classroom Name" class="form-control btn-lg my-2">
+
+        <input type="submit" class="btn btn-outline-primary btn-lg col">
+        <p class="my-0">Need to sign up as a parent or child? <a href="/signup">SIGN UP</a></p>
+        <p class="my-0">Already have an account? <a href="/login">LOG IN</a></p>
+    </form>
+    </div>
+    <%- include('partials/footer') -%>

@@ -1,0 +1,72 @@
+<!-- User Dashboard view -->
+<!-- how to distinguish views of teachers vs students? -->
+<%- include('partials/header') -%>
+
+  <h1>Welcome, <span><%= user.name %></span></h1>
+
+  <!-- Nav with image links to add post, class, friends, messages, setting -->
+  <div class="">
+
+  </div>
+
+  <!-- Message from teacher section -->
+  <!-- Able to minimize? -->
+  <div class="">
+
+  </div>
+
+  <!-- Small part of your posts -->
+  <div class="">
+    <!-- style the feed sideways, only show 3 most recent -->
+    <ul class="pcontainer">
+    <!-- include card styled the same as posts but it's a link to add a new post -->
+    <% post.reverse().forEach( el => { %>
+      <li class="card col-md-4">
+        <div class='todoItem' data-id='<%=el._id%>'>
+            <span><%= el.post %></span>
+            <p><%= el.postBody %></p>
+            <form
+            action="/post/<%= el._id %>?_method=DELETE"
+            method="POST"
+            class="col-3"
+            >
+            <button class="btn btn-primary fa fa-trash" type="submit"></button>
+            </form>
+            <img src="<%= el.image %>" class="img-fluid" alt="<%= el.post %>">
+          </li>
+      </div>
+      <% }) %>
+      </ul>
+      <!-- Large arrow to take you to all your posts -->
+  </div>
+
+  <!-- Vertical feed of your friends' posts -->
+  <!-- Associated book on left, what your friend did on right -->
+  <div class="">
+
+    <a class="btn btn-primary" href="/feed">Return to Feed</a>
+  </div>
+
+
+    <div>
+        <p><strong>User Name</strong>: <%= user.userName %></p>
+        <p><strong>Email</strong>: <%= user.email %></p>
+        <a href="/logout" class="col-3 btn btn-primary">Logout</a>
+    </div>
+
+<!-- what is all this? -->
+    <% if (locals.messages.errors) { %>
+        <% messages.errors.forEach( el => { %>
+            <div class="alert alert-danger"><%= el.msg %></div>
+        <% }) %>
+    <% } %>
+    <% if (locals.messages.info) { %>
+        <% messages.info.forEach( el => { %>
+            <div class="alert alert-danger"><%= el.msg %></div>
+        <% }) %>
+    <% } %>
+
+
+    <script src="js/main.js"></script>
+    <script src="js/postPage.js"></script>
+    <%- include('partials/footer') -%>
