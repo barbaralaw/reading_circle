@@ -1,0 +1,24 @@
+<%= const searchBooks = document.getElementById('searchBooks') %>
+
+<%= searchBooks.addEventListener('click', function(){ %>
+  < const url = "https://www.googleapis.com/books/v1/volumes?q=" >
+  < const title = document.getElementById('searchTitle').value >
+  < const author = document.getElementById('searchAuthor').value >
+
+<%= fetch(url+title+author) %>
+    <% .then(res => res.json()) %>
+    <% .then(data => { %>
+      <% for (let i=0; i<3; i++) { %>
+        <div class="card">
+          <h3><%= post[i].bookTitle %></h3>
+          <p><%= post[i].post %></p>
+          <p><%= post[i].postBody %></p>
+        </div>
+    <% } %>
+
+    <% }) %>
+    <% .catch(err => { %>
+      <% console.log(`error ${err}`); %>
+    <% }) %>
+
+<% }) %>

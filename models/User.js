@@ -7,7 +7,7 @@ const UserSchema = new mongoose.Schema({
   lastNameParent: String,
   email: { type: String, unique: true },
 
-  password: String
+  password: String,
 
   firstNameChild: String
 })

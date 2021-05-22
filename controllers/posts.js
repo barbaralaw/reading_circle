@@ -15,7 +15,15 @@ module.exports = {
   },
   createPost: async (req, res) => {
     console.log(req.file);
-
+    console.log('body is: ', req.body)
+    console.log(JSON.parse(req.body.foundBook))
+    let foundBook = JSON.parse(req.body.foundBook)
+    let author = foundBook.authors
+    if (!author || author.length == 0) {
+      author = 'unknown'
+    } else {
+      author = author.join(', ')
+    }
     const fileErrors = [];
     if (req.file.size > 1024 * 1024 * 3)
       fileErrors.push({ msg: "Uploaded file is larger than 3 MB" });
@@ -39,6 +47,9 @@ module.exports = {
     try {
       await Post.create({
         post: req.body.post,
+        bookTitle: foundBook.title,
+        bookAuthor: author,
+        bookThumbnail: foundBook.thumbnail,
         postBody: req.body.postBody,
         image: result.secure_url,
         userId: req.user.id,

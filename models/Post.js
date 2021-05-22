@@ -5,20 +5,21 @@ const PostSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  postBody:{
+  bookTitle: {
     type: String,
     required: true,
-  }
-  ,
-  likes: {
-    type: Number,
-    required: false,
-    default:0
   },
-  dislikes: {
-    type: Number,
+  bookAuthor: {
+    type: String,
+    required: true,
+  },
+  bookThumbnail: {
+    type: String,
     required: false,
-    default:0
+  },
+  postBody: {
+    type: String,
+    required: true,
   },
   userId: {
     type: String,
@@ -26,11 +27,11 @@ const PostSchema = new mongoose.Schema({
   },
   image: {
     type: String,
-    require: true,
+    require: false,
   },
   cloudinaryId: {
     type: String,
-    require: true,
+    require: false,
   },
 })
 

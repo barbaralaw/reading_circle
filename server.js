@@ -8,9 +8,12 @@ const MongoStore = require('connect-mongo')(session)
 const methodOverride = require("method-override");
 const flash = require('express-flash')
 const logger = require('morgan')
+const XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest
+const xhr = new XMLHttpRequest
 const connectDB = require('./config/database')
 const mainRoutes = require('./routes/main')
 const postRoutes = require('./routes/posts')
+//const bookRoutes = require('./routes/books')
 const feedRoutes = require('./routes/feed')
 const postPageRoutes = require('./routes/postPage')
 
@@ -50,18 +53,18 @@ app.use(
       store: new MongoStore({ mongooseConnection: mongoose.connection }),
     })
   )
-  
+
 // Passport middleware
 app.use(passport.initialize())
 app.use(passport.session())
 
 app.use(flash())
-  
+
 app.use('/', mainRoutes)
 app.use('/post', postRoutes)
 app.use('/feed', feedRoutes)
 app.use('/postPage', postPageRoutes)
- 
+
 app.listen(process.env.PORT, ()=>{
     console.log('Server is running, you better catch it!')
-})    
+})

@@ -1,3 +1,7 @@
+#post {
+  display: none;
+}
+
 h1,
 h2 {
     color: #123554;
@@ -176,16 +180,16 @@ ul {
 }
 
 /* Media Query for News container on Tablet */
-@media only screen and (min-width: 768px) {  
+@media only screen and (min-width: 768px) {
   /* Makes font size more readable on tablet */
   #newsContainer  .card .card-title {
     font-size: 0.9rem;
   }
-} 
+}
 
 
 /* Media Query for feed container card  on Desktop */
-@media only screen and (min-width: 992px) {  
+@media only screen and (min-width: 992px) {
   /* Makes font size more consistent on bigger screens */
   #newsContainer  .card .card-title {
     font-size: 1.1rem;
@@ -193,8 +197,8 @@ ul {
 
   /* Sets a max width to the card so it doesnt take half the screen on desktop */
   #feedContainer .card {
-    width: 420px; 
+    width: 420px;
   }
 
 
-} 
+}
