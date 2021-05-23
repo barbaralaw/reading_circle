@@ -1,48 +1,21 @@
-# Introduction
+# readalong Project README
+The readalong app gives students, parents, and teachers a place to share their daily reading and related projects. Students will see their teacher's bookshelf, recommendations, and assignments, and will be able to add titles from their own bookshelves to their online 'shelf.' Classmates will get to experience the art and projects inspired by their fellows, and can read about their friends' experiences with the titles they've also read.
 
-A Simple Social Media application built using the MVC Architecture, we have also implemented "local authorization" so folx can sign up, customize & personalize the app 
+In our increasingly virtual classroom, readalong provides an inviting circle in which to share the joy of reading.
 
----
+## Currently working on V1.0
+Working towards releasing MVP. This phase includes the following features/capabilities:
+- Parent can sign 1 child up
+- Child can search Google Books for their book
+- Child can upload media & enter reaction to book
+- Dashboard view shows child's books + media
 
-> Be sure to add that lovely star 😀 and fork it for your own copy
+## Next on the to-do list:
+- Display x more posts at a time vs 3/all
+- Style post card
+  - Smaller book thumbnail
+  - Show image
+  - Layout card in beautiful way
 
----
-
-# Objectives
-
-- It's a beginner level app created to understand how MVC concept and logins are added
-
----
-
-# Who is this for? 
-
-- It's for beginners & intermediates with little more experience, to help understand the various aspects of building a node app with some complex features
-
----
-
-# Optimizations
-
-- 
-
-# Packages/Dependencies used 
-
-connect-mongo, dotenv, ejs, express, express-session, mongodb, mongoose, morgan, nodemon, passport, passport-local
-
----
-
-# Install all the dependencies or node packages used for development via Terminal
-
-`npm install` 
-
----
-
-# Things to add
-
-- Create a `.env` file and add the following as `key: value` 
-  - PORT: 2121 (can be any port example: 3000) 
-  - DB_STRING: `your database URI` 
- ---
- 
- Have fun testing and improving it! 😎
-
-
+## Package dependencies
+bcrypt, cloudinary, connect-mongo, dotenv, ejs, express, express-flash, express-session, method-override, mongodb, mongoose, morgan, multer, nodemon, passport, passport-local, validator, xmlhttprequest
