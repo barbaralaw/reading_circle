@@ -2,7 +2,6 @@ const deleteBtn = document.querySelectorAll('.del')
 const postItem = document.querySelectorAll('span.not')
 const searchBooks = document.getElementById('searchBooks')
 
-
 // const todoComplete = document.querySelectorAll('span.completed')
 
 Array.from(deleteBtn).forEach((el)=>{
@@ -106,6 +105,15 @@ async function deletePost(){
     }catch(err){
         console.log(err)
     }
+}
+
+const seeAllPosts = document.getElementById('seeAllPosts')
+seeAllPosts.addEventListener('click', seePosts);
+
+function seePosts() {
+  document.getElementById('recentPosts').style.display = "none";
+  document.getElementById('allPosts').style.display = "flex";
+  document.getElementById('allPosts').style.flexWrap = "wrap";
 }
 
 // async function markComplete(){

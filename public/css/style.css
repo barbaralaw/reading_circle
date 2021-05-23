@@ -1,6 +1,9 @@
 #post {
   display: none;
 }
+#allPosts {
+  display: none;
+}
 
 h1,
 h2 {

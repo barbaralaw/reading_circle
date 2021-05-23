@@ -55,18 +55,30 @@
   <!-- Card with giant plus sign to add new post -->
   <!-- Big arrow to see all your posts -->
   <div class="container">
-    <% for (let i=0; i<post.length; i++) { %>
+    <div id="recentPosts" style="display: flex" style="flex-wrap=wrap">
+      <% for (let i=0; i<3; i++) { %>
+        <div class="card" style="width: 33.33%">
+          <h3><%= post[i].bookTitle %></h3>
+          <p><%= post[i].post %></p>
+          <p><%= post[i].postBody %></p>
+          <img class="img-fluid" src="<%= post[i].bookThumbnail %>" alt="<%= post[i].bookTitle %>">
+        </div>
+      <% } %>
       <div class="card">
-        <h3><%= post[i].bookTitle %></h3>
-        <p><%= post[i].post %></p>
-        <p><%= post[i].postBody %></p>
-        <img src="<%= post[i].bookThumbnail %>" alt="<%= post[i].bookTitle %>">
+        <p class="d2">+</p>
       </div>
-    <% } %>
-    <div class="card">
-      <p class="d2">+</p>
+      <button id="seeAllPosts">See all</button>
     </div>
-    <button type="button" name="button">See all</button>
+    <div id="allPosts">
+      <% for (let i=0; i<post.length; i++) { %>
+        <div class="card" style="width: 33.33%">
+          <h3><%= post[i].bookTitle %></h3>
+          <p><%= post[i].post %></p>
+          <p><%= post[i].postBody %></p>
+          <img class="img-fluid" src="<%= post[i].bookThumbnail %>" alt="<%= post[i].bookTitle %>">
+        </div>
+      <% } %>
+    </div>
   </div>
 
 
