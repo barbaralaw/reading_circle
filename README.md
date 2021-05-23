@@ -16,6 +16,13 @@ Working towards releasing MVP. This phase includes the following features/capabi
   - Smaller book thumbnail
   - Show image
   - Layout card in beautiful way
+- Style feed page cards
+
+### On deck for V1.1
+- Search own previous books
+- Add/edit posts to same book
+- Create landing page
+- Add cohesive colors and branding
 
 ## Package dependencies
 bcrypt, cloudinary, connect-mongo, dotenv, ejs, express, express-flash, express-session, method-override, mongodb, mongoose, morgan, multer, nodemon, passport, passport-local, validator, xmlhttprequest
