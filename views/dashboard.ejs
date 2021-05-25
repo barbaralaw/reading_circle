@@ -57,11 +57,18 @@
   <div class="container">
     <div id="recentPosts" style="display: flex" style="flex-wrap=wrap">
       <% for (let i=0; i<3; i++) { %>
-        <div class="card" style="width: 33.33%">
-          <h3><%= post[i].bookTitle %></h3>
-          <p><%= post[i].post %></p>
-          <p><%= post[i].postBody %></p>
-          <img class="img-fluid" src="<%= post[i].bookThumbnail %>" alt="<%= post[i].bookTitle %>">
+        <div class="card" style="display: flex" style="width: 33.33%">
+          <div class="container">
+            <h3><%= post[i].bookTitle %></h3>
+            <img class="img-fluid" src="<%= post[i].bookThumbnail %>" alt="<%= post[i].bookTitle %>">
+          </div>
+          <div class="container">
+            <h3><%= post[i].post %></h3>
+            <p><%= post[i].postBody %></p>
+            <img class="img-fluid" src="<%= post[i].image %>" alt="<%= post[i].post %>">
+          </div>
+
+
         </div>
       <% } %>
       <div class="card">
