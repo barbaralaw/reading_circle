@@ -5,6 +5,7 @@
   display: none;
 }
 
+/*
 h1,
 h2 {
     color: #123554;
@@ -20,7 +21,9 @@ h2 {
 }
 
 header{
-    margin-top: 2%
+    margin: 0 !important;
+    width: 100%;
+    padding-top: 2%;
 }
 
 span{
@@ -110,18 +113,18 @@ ul {
   justify-content: space-between;
 } */
 
-/* Card-Body */
+/* Card-Body
 .card-body {
   padding: 0.5rem 1rem;
 }
 
-/* Container Spacing */
+/* Container Spacing
 .container {
   margin-top: 4rem;
   margin-bottom: 4rem;
-}
+} */
 
-/* News Card Layout */
+/* News Card Layout
 
 #newsContainer .card {
   overflow: hidden;
@@ -149,7 +152,7 @@ ul {
 }
 
 
-/* Feed Cards Layout */
+/* Feed Cards Layout
 
 #feedContainer .card {
   border: 1px solid #cccccc;
@@ -182,26 +185,55 @@ ul {
   margin-bottom: 0.15rem;
 }
 
-/* Media Query for News container on Tablet */
+/* Media Query for News container on Tablet
 @media only screen and (min-width: 768px) {
-  /* Makes font size more readable on tablet */
+  /* Makes font size more readable on tablet
   #newsContainer  .card .card-title {
     font-size: 0.9rem;
   }
 }
+*/
+body {
+  display: block;
+  overflow-x: hidden;
+}
+
+nav {
+  background-color: rgba(243,105,32,1);
+}
+
+.navbar-brand img {
+  max-height: 75px;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: white;
+}
+
+nav ul li a {
+  color: grey;
+  font-size: 22px;
+  margin: auto 10px;
+}
+
+nav ul li a:hover {
+  color: white;
+}
 
 
-/* Media Query for feed container card  on Desktop */
+/* Media Query for feed container card  on Desktop
 @media only screen and (min-width: 992px) {
-  /* Makes font size more consistent on bigger screens */
+  /* Makes font size more consistent on bigger screens
   #newsContainer  .card .card-title {
     font-size: 1.1rem;
   }
 
-  /* Sets a max width to the card so it doesnt take half the screen on desktop */
+  /* Sets a max width to the card so it doesnt take half the screen on desktop
   #feedContainer .card {
     width: 420px;
   }
-
-
 }
+*/
