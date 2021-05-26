@@ -242,8 +242,9 @@ section p {
   font-weight: 300;
 }
 
-button {
-  max-width: 50%;
+button,
+#labelUpload {
+  max-width: 50% !important;
   border-radius: 50px !important;
 }
 
@@ -293,6 +294,7 @@ button {
   text-align: center;
   color: grey;
 }
+
 /* Media Query for feed container card  on Desktop
 @media only screen and (min-width: 992px) {
   /* Makes font size more consistent on bigger screens
