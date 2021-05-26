@@ -1,26 +1,49 @@
 <!-- User Dashboard view -->
 <!-- how to distinguish views of teachers vs students? -->
+
 <%- include('partials/header') -%>
 
-  <h1>Welcome, <span><%= user.firstNameChild %></span>!</h1>
+<!-- Welcome User Section -->
+  <section id="welcomeUser">
+    <div class="container">
+      <div class="row align-items-left">
+        <h1>Welcome, <span><%= user.firstNameChild %></span>!</h1>
 
-  <!-- Nav with image links to add post, class, friends, messages, setting -->
-  <div class="">
-    <p>Am I here? I think I am.</p>
+        <!-- Nav with image links to add post, class, friends, messages, setting -->
+        <div class="">
+          <p>Am I here? I think I am.</p>
+        </div>
+      </div>
+      <div class="row align-items-left">
+        <!-- Message from teacher section -->
+        <!-- Able to minimize? -->
+        <div class="">
+
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- End Welcome User Section -->
+
+<!-- Book Search Section -->
+<section id="bookSearch">
+  <div class="container">
+    <div class="row align-items-left">
+      <h2>Search for a book</h2>
+    </div>
+    <div class="row align-items-center" id="searchGoogle">
+      <div class="col-md-4 d-flex justify-content-center">
+        <input type="text" id="title" placeholder="title">
+        <input type="text" id="author" placeholder="author">
+      </div>
+      <div class="col-md-4 d-flex justify-content-center">
+        <button id="submit" type="button" class="btn btn-dark btn-lg">Search</button>
+      </div>
+    </div>
   </div>
+</section>
+<!-- End Book Search Section -->
 
-  <!-- Message from teacher section -->
-  <!-- Able to minimize? -->
-  <div class="">
-
-  </div>
-
-  <!-- div to integrate google books api -->
-  <div id="searchGoogle">
-    <input type="text" id="title" placeholder="title">
-    <input type="text" id="author" placeholder="author">
-    <button id="submit">Search</button>
-  </div>
   <!-- div containing 3 most recent books -->
 
   <!-- card with big plus sign to reveal book search div -->
@@ -31,7 +54,10 @@
   <!-- Insert button to reveal add post form, a lightbox maybe? -->
     <!-- This is where the google books api request form should be -->
     <form id="post" action="/post/createPost" enctype="multipart/form-data" method='POST'>
-      <div id="results" class="container">
+      <div class="container">
+        <div id="results" class="row cards">
+
+        </div>
         <p>Select a book:</p>
         <!--<ul id="results"></ul>-->
       </div>
