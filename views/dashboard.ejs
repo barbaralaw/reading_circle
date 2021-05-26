@@ -98,11 +98,20 @@
 <!-- End Add Post Section -->
   <!-- Insert button to reveal add post form, a lightbox maybe? -->
 
-<!-- Newest Posts Section -->
-<section id="newestPosts">
+
+<!-- Recent Posts Section -->
+<section id="recentPosts">
   <div class="container">
     <div class="row">
-      <% for (let i=0; i<7; i++) { %>
+      <div class="col">
+        <h2>Your Latest Posts</h2>
+      </div>
+      <div class="col">
+        <button id="seeAllPosts" class="btn btn-dark btn-lg" value="See all posts">See All Posts</button>
+      </div>
+    </div>
+    <div class="row">
+      <% for (let i=0; i<Math.min(post.length, 3); i++) { %>
 
         <div class="col">
           <div class="card" style="width: 25rem;">
@@ -121,7 +130,7 @@
               <div class="row">
                 <div class="col">
                   <h5><%= post[i].post %></h5>
-                  <p><%= post[i].postBody.substring(0,90) %>...</p>
+                  <p><%= post[i].postBody.substring(0,90) %><% if (post[i].postBody.length > 90){ %>...<%} %></p>
                 </div>
                 <% if (post[i].image) { %>
                   <div class="col">
@@ -138,48 +147,65 @@
 
       <% } %>
       <div class="card">
-        <button type="submit" class="btn btn-dark btn-lg" value="Add Post">Add Post</button>
+
       </div>
     </div>
   </div>
 </section>
-<!-- End Newest Posts Section -->
-  <!-- Horizontal feed of your most recent posts -->
-  <!-- Card with giant plus sign to add new post -->
-  <!-- Big arrow to see all your posts -->
+<!-- End Recent Posts Section -->
+
+<!-- All Posts Section -->
+<section id="allPosts">
   <div class="container">
-    <div id="recentPosts" style="display: flex" style="flex-wrap=wrap">
-      <% for (let i=0; i<3; i++) { %>
-        <div class="card" style="display: flex" style="width: 33.33%">
-          <div class="container">
-            <h3><%= post[i].bookTitle %></h3>
-            <img class="img-fluid" src="<%= post[i].bookThumbnail %>" alt="<%= post[i].bookTitle %>">
-          </div>
-          <div class="container">
-            <h3><%= post[i].post %></h3>
-            <p><%= post[i].postBody %></p>
-            <img class="img-fluid" src="<%= post[i].image %>" alt="<%= post[i].post %>">
-          </div>
-
-
-        </div>
-      <% } %>
-      <div class="card">
-        <p class="d2">+</p>
+    <div class="row">
+      <div class="col">
+        <h2>All Your Posts</h2>
       </div>
-      <button id="seeAllPosts">See all</button>
+      <div class="col">
+        <button id="seeLessPosts" class="btn btn-dark btn-lg" value="See all posts">See Less Posts</button>
+      </div>
     </div>
-    <div id="allPosts">
+    <div class="row">
       <% for (let i=0; i<post.length; i++) { %>
-        <div class="card" style="width: 33.33%">
-          <h3><%= post[i].bookTitle %></h3>
-          <p><%= post[i].post %></p>
-          <p><%= post[i].postBody %></p>
-          <img class="img-fluid" src="<%= post[i].bookThumbnail %>" alt="<%= post[i].bookTitle %>">
+
+        <div class="col">
+          <div class="card" style="width: 25rem;">
+            <div class="card-header" style="height: 15rem;">
+              <div class="row">
+                <div class="col">
+                  <img src="<%= post[i].bookThumbnail %>" alt="<%= post[i].bookTitle %>" class="img-fluid">
+                </div>
+                <div class="col">
+                  <h4><%= post[i].bookTitle %></h4>
+                  <span><%= post[i].bookAuthor %></span>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <h5><%= post[i].post %></h5>
+                  <p><%= post[i].postBody.substring(0,90) %><% if (post[i].postBody.length > 90){ %>...<%} %></p>
+                </div>
+                <% if (post[i].image) { %>
+                  <div class="col">
+                    <img src="<%= post[i].image %>" alt="<%= post[i].bookTitle %> project" class="img-fluid">
+                  </div>
+                <% } %>
+              </div>
+            </div>
+            <div class="card-body">
+              <a href="#" class="card-link">Card link</a>
+            </div>
+          </div>
         </div>
+
       <% } %>
     </div>
   </div>
+</section>
+<!-- End All Posts Section -->
+
 
 
   <!-- Vertical feed of your friends' posts -->

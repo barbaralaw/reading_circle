@@ -116,12 +116,21 @@ async function deletePost(){
     }
 }
 
-const seeAllPosts = document.getElementById('seeAllPosts')
-seeAllPosts.addEventListener('click', seePosts);
+const seeAllMyPosts = document.getElementById('seeAllPosts')
+seeAllMyPosts.addEventListener('click', seeAllPosts);
 
-function seePosts() {
+function seeAllPosts() {
   document.getElementById('recentPosts').style.display = "none";
   document.getElementById('allPosts').style.display = "flex";
+  document.getElementById('allPosts').style.flexWrap = "wrap";
+}
+
+const seeLessMyPosts = document.getElementById('seeLessPosts')
+seeLessMyPosts.addEventListener('click', seeLessPosts);
+
+function seeLessPosts() {
+  document.getElementById('recentPosts').style.display = "flex";
+  document.getElementById('allPosts').style.display = "none";
   document.getElementById('allPosts').style.flexWrap = "wrap";
 }
 
