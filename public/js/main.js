@@ -47,15 +47,24 @@ function searchGoogle() {
         let divRadio = document.createElement('div')
         divRadio.appendChild(input)
         divRadio.appendChild(label)
-        let div = document.createElement('div')
-        div.appendChild(thumb)
-        div.appendChild(divRadio)
-        results.appendChild(div)
+        let divCardBody = document.createElement('div')
+        divCardBody.classList.add("card-body")
+        divCardBody.appendChild(thumb)
+        divCardBody.appendChild(divRadio)
+        let divCard = document.createElement('div')
+        divCard.classList.add("card")
+        divCard.style.width = "18rem"
+        divCard.appendChild(divCardBody)
+        let divCol = document.createElement('div')
+        divCol.classList.add("col-md-4")
+        divCol.classList.add("d-flex")
+        divCol.classList.add("justify-content-center")
+        divCol.appendChild(divCard)
+        results.appendChild(divCol)
         //let li = document.createElement('li')
         //li.innerText = data.items[i].volumeInfo.title
         //results.appendChild(li)
       }
-
 
 
     })
@@ -115,6 +124,10 @@ function seePosts() {
   document.getElementById('allPosts').style.display = "flex";
   document.getElementById('allPosts').style.flexWrap = "wrap";
 }
+
+
+const myCarousel = document.querySelector('#myCarousel')
+const carousel = new bootstrap.Carousel(myCarousel)
 
 // async function markComplete(){
 //     const todoId = this.parentNode.dataset.id

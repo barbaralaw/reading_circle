@@ -223,7 +223,76 @@ nav ul li a:hover {
   color: white;
 }
 
+section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
 
+section h1,
+section h2 {
+  text-transform: uppercase;
+  font-weight: 900;
+  color: grey;
+  text-align: left;
+  margin-bottom: 20px
+}
+
+section p {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+button {
+  max-width: 50%;
+  border-radius: 50px !important;
+}
+
+#myCarousel,
+#welcomeUser {
+  margin-top: 100px;
+}
+
+#hero .col {
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+}
+
+#hero .img-col {
+  justify-content: flex-end;
+}
+
+#hero img {
+  max-width: 130% !important;
+  width: 130%;
+}
+
+#hero .card {
+  box-shadow: 11px 7px 16px #f9f9f9;
+  border: 0;
+  text-align: center;
+}
+
+#hero .icon {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+#projects .projects {
+  margin-bottom: 50px;
+}
+
+#contact {
+  text-align: center;
+  background-color: rgba(243,105,32,1);
+  color: white;
+}
+
+#contact h2 {
+  text-align: center;
+  color: grey;
+}
 /* Media Query for feed container card  on Desktop
 @media only screen and (min-width: 992px) {
   /* Makes font size more consistent on bigger screens

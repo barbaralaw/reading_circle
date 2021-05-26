@@ -1,15 +1,156 @@
 <%- include('partials/header') -%>
 
-  <!-- Full screen splash image slideshow, buttons to continue -->
-  <div class="">
-
+  <!-- Splash image carousel -->
+  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-interval=3000 data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-interval=3000 data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-interval=3000 data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-interval=3000 data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      <button type="button" data-bs-interval=3000 data-bs-target="#myCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+    </div>
+    <div class="carousel-inner">1040 1940
+      <div class="carousel-item active">
+        <img src="../imgs/carousel-img-1.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="../imgs/carousel-img-2.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="../imgs/carousel-img-3.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="../imgs/carousel-img-4.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="../imgs/carousel-img-5.jpg" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
+  <!-- End Splash image carousel -->
 
+  <!-- Hero section -->
   <!-- Basic info & Value statement with smiling image on left -->
   <!-- Button to Teachers & button to Parents -->
-  <div class="">
+  <section id="hero">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1>Bringing Readers<br>Together</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <button type="button" class="btn btn-dark btn-lg">Learn More</button>
+        </div>
+        <div class="col img-col">
+          <img src="../imgs/hero-img.png" alt="Reading Book" class="img-fluid" />
+        </div>
+      </div>
+      <div class="row cards">
+        <div class="col-md-4 d-flex justify-content-center">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <img src="../imgs/icon1.svg" alt="Service One" class="icon" />
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 d-flex justify-content-center">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <img src="../imgs/icon2.svg" alt="Service Two" class="icon" />
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 d-flex justify-content-center">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <img src="../imgs/icon3.svg" alt="Service Three" class="icon" />
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Hero section -->
 
-  </div>
+  <!-- About Us Section -->
+  <section id="about-us">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col">
+          <img src="../imgs/about-us.png" alt="About Us" class="img-fluid" />
+        </div>
+        <div class="col">
+          <h2>About Us</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <button type="button" class="btn btn-dark btn-lg">Meet us</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- About Us Section -->
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="container">
+      <div class="row align-items-center projects">
+        <div class="col">
+          <h2>Our Projects</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </div>
+      <div class="row align-items-center">
+        <div class="col">
+          <div class="card mb-3">
+            <img src="../imgs/projects/project1.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-3">
+            <img src="../imgs/projects/project2.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Projects Section -->
+
+  <!-- Contact Us -->
+  <section id="contact">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col">
+          <h2>Contact Us</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- End Contact Us -->
 
   <!-- Large testimonial quote -->
   <div class="">
@@ -20,7 +161,7 @@
   <div class="">
 
   </div>
-  
+
   <div class="container card text-center shadow " style="margin-top: 7rem; min-width: 300px; max-width: 450px; height:auto">
     <h1 class="display-5">Sign in or create account</h1>
     <div class="btn-group flex-column">
@@ -29,3 +170,7 @@
     </div>
 
   </div>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/postPage.js"></script>
+  <%- include('partials/footer') -%>
