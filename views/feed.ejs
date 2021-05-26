@@ -1,24 +1,57 @@
 <%- include('partials/header') -%>
 
-<!-- News Container -->
-<div class="container" id="newsContainer">
-  <span>Only News</span>
-  <div class="row">
+<!-- All Posts Section -->
+<section id="socialFeed">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h2>Class Posts</h2>
+      </div>
+    </div>
+    <div class="row">
+      <% for (let i=posts.length-1; i>=0; i--) { %>
 
-      <% for(var i=0; i<4; i++) {%>
-        <div class="col-md-3 col-sm-4">
-          <div class="news card bg-dark text-white">
+        <div class="col">
+          <a href="/postPage/<%= posts[i]._id%>">
+          <div class="card" style="width: 25rem;">
+            <div class="card-header" style="height: 15rem;">
+              <div class="row">
+                <div class="col">
+                  <img src="<%= posts[i].bookThumbnail %>" alt="<%= posts[i].bookTitle %>" class="img-fluid">
+                </div>
+                <div class="col">
+                  <h4><%= posts[i].bookTitle %></h4>
+                  <span><%= posts[i].bookAuthor %></span>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <h5><%= posts[i].post %></h5>
+                  <p><%= posts[i].postBody.substring(0,90) %><% if (posts[i].postBody.length > 90){ %>...<%} %></p>
+                </div>
+                <% if (posts[i].image) { %>
+                  <div class="col">
+                    <img src="<%= posts[i].image %>" alt="<%= posts[i].bookTitle %> project" class="img-fluid">
+                  </div>
+                <% } %>
+              </div>
+            </div>
+            <div class="card-body">
+              <a href="#" class="card-link">Card link</a>
+            </div>
           </div>
+          </a>
         </div>
+
       <% } %>
-
+    </div>
   </div>
+</section>
+<!-- End All Posts Section -->
 
-</div>
-
-
-
-<!-- Post Feed Container -->
+<!-- Post Feed Container --
   <div class="container" id="feedContainer">
     <div class="row row-cols-1 row-cols-md-2">
       <% for(var i=0; i<posts.length; i++) {%>
@@ -28,13 +61,13 @@
               <img class="card-img-top" src="<%= posts[i].image%>">
             </a>
             <div class="card-body">
-              <!-- Like Button -->
+              <!-- Like Button --
               <button class="btn btn-primary fa fa-heart" type="submit"></button>
-              <!-- Comment Button -->
+              <!-- Comment Button --
               <button class="btn btn-primary fa fa-comment" type="submit"></button>
-              <!-- Share Button -->
+              <!-- Share Button --
               <button class="btn btn-primary fas fa-paper-plane" type="submit"></button>
-              <!-- Save or Bookmark Button -->
+              <!-- Save or Bookmark Button --
               <button class="btn btn-primary fas fa-bookmark float-end" type="submit"></button>
 
               <h5 class="card-title">
@@ -49,7 +82,7 @@
         </div>
         <% } %>
     </div>
-
+-->
 
     <div class="row justify-content-center mt-5">
       <a class="btn btn-primary" href="/post">Return to Dashboard</a>
