@@ -25,6 +25,7 @@ module.exports = {
       author = author.join(', ')
     }
     const fileErrors = [];
+    var result = 'https://res.cloudinary.com/readalong/image/upload/v1622151204/No_Image_Selected_gpzpa2.jpg'
     if (req.file) {
       if (req.file.size > 1024 * 1024 * 3)
         fileErrors.push({ msg: "Uploaded file is larger than 3 MB" });
@@ -38,7 +39,8 @@ module.exports = {
       )
         fileErrors.push({ msg: "Only jpeg, jpg, png and gif allowed" });
 
-      const result = await cloudinary.uploader.upload(req.file.path);
+
+      result = await cloudinary.uploader.upload(req.file.path);
     }
 
 
@@ -52,16 +54,14 @@ module.exports = {
 
     try {
       await Post.create({
-        if (result) {
-          image: result.secure_url
-          cloudinaryId: result.public_id
-        },
+        image: result.secure_url,
+        cloudinaryId: result.public_id,
         post: req.body.post,
         bookTitle: foundBook.title,
         bookAuthor: author,
         bookThumbnail: foundBook.thumbnail,
         postBody: req.body.postBody,
-
+        userName: req.user.firstNameChild,
         userId: req.user.id,
 
       });

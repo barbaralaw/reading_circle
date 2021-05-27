@@ -1,60 +1,64 @@
 <%- include('partials/header') -%>
-<div class="container">
-  <div class="row justify-content-center mt-5">
-    <div class="col-sm-6 d-flex flex-column">
-      <h2 class="mb-3"><%= post.post %></h2>
-      <a class="test-popup-link" href="<%= post.image%>">
-        <img class="img-fluid shadow" src="<%= post.image%>">
-      </a>
 
-      <div class="d-flex">
-        <div class="d-flex align-items-center">
-          <form
-          action="/postPage/likePost/<%= post.id %>?_method=PUT"
-          method="POST"
-          class="col"
-        >
-            <button class="btn btn-primary fas fa-thumbs-up" type="submit"></button>
-          </form>
-          <h3 class="mx-1 mb-1"><%= post.likes %></h3>
-        </div>
+<section id="postDetails">
+  <div class="container">
+    <div class="row justify-content-center mt-5">
+      <div class="col-sm-6 d-flex flex-column">
+        <h2 class="mb-3"><%= post.post %></h2>
+        <a class="test-popup-link" href="<%= post.image%>">
+          <img class="img-fluid shadow" src="<%= post.image%>">
+        </a>
 
-
-
-        <%if(post.userId == user.id){ %>
-          <form
-            action="/post/<%= post.id %>?_method=DELETE"
+        <div class="d-flex">
+          <div class="d-flex align-items-center">
+            <form
+            action="/postPage/likePost/<%= post.id %>?_method=PUT"
             method="POST"
-            class="col text-center"
+            class="col"
           >
-            <button class="btn btn-primary fa fa-trash" type="submit"></button>
-          </form>
-        <%}%>
+              <button class="btn btn-primary fas fa-thumbs-up" type="submit"></button>
+            </form>
+            <h3 class="mx-1 mb-1"><%= post.likes %></h3>
+          </div>
 
 
-        <div class="d-flex align-items-center">
-          <form
-          action="/postPage/dislikePost/<%= post.id %>?_method=PUT"
-          method="POST"
-          class="col"
-          >
-            <button class="btn btn-primary fas fa-thumbs-down" type="submit"></button>
-          </form>
-          <h3 class="mx-1 mb-1"><%= post.dislikes %></h3>
+
+          <%if(post.userId == user.id){ %>
+            <form
+              action="/post/<%= post.id %>?_method=DELETE"
+              method="POST"
+              class="col text-center"
+            >
+              <button class="btn btn-primary fa fa-trash" type="submit"></button>
+            </form>
+          <%}%>
+
+
+          <div class="d-flex align-items-center">
+            <form
+            action="/postPage/dislikePost/<%= post.id %>?_method=PUT"
+            method="POST"
+            class="col"
+            >
+              <button class="btn btn-primary fas fa-thumbs-down" type="submit"></button>
+            </form>
+            <h3 class="mx-1 mb-1"><%= post.dislikes %></h3>
+          </div>
+
         </div>
 
       </div>
-
-    </div>
-    <div class="col-sm-3 mt-5">
-      <p><%= post.postBody %></p>
-    </div>
-    <div class="col-sm-6 mt-5">
-      <a class="btn btn-primary" href="/post">Return to Dashboard</a>
-      <a class="btn btn-primary" href="/feed">Return to Feed</a>
+      <div class="col-sm-3 mt-5">
+        <p><%= post.postBody %></p>
+      </div>
+      <div class="col-sm-6 mt-5">
+        <a class="btn btn-primary" href="/post">Return to Dashboard</a>
+        <a class="btn btn-primary" href="/feed">Return to Feed</a>
+      </div>
     </div>
   </div>
-</div>
+</section>
+
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="../magnific-popup/jquery.magnific-popup.js"></script>

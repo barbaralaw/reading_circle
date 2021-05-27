@@ -111,14 +111,16 @@
       </div>
     </div>
     <div class="row">
-      <% for (let i=0; i<Math.min(post.length, 3); i++) { %>
+      <% for (let i=post.length-1; i>=Math.max(post.length-3,0); i--) { %>
 
         <div class="col">
-          <div class="card" style="width: 25rem;">
-            <div class="card-header" >
+          <div class="card my-2" style="width: 25rem;">
+            <div class="card-header" style="height: 12rem">
               <div class="row">
                 <div class="col">
-                  <img src="<%= post[i].bookThumbnail %>" alt="<%= post[i].bookTitle %>" class="img-fluid">
+                  <div class="container">
+                    <img src="<%= post[i].bookThumbnail %>" alt="<%= post[i].bookTitle %>" class="img-fluid" style="max-width:80% !important">
+                  </div>
                 </div>
                 <div class="col">
                   <h4><%= post[i].bookTitle %></h4>
@@ -126,7 +128,7 @@
                 </div>
               </div>
             </div>
-            <div class="card-body">
+            <div class="card-body" style="height: 15rem">
               <div class="row">
                 <div class="col">
                   <h5><%= post[i].post %></h5>
@@ -134,7 +136,10 @@
                 </div>
                 <% if (post[i].image) { %>
                   <div class="col">
-                    <img src="<%= post[i].image %>" alt="<%= post[i].bookTitle %> project" class="img-fluid">
+                    <div class="container">
+                      <img src="<%= post[i].image %>" alt="<%= post[i].bookTitle %> project" class="img-fluid">
+                    </div>
+
                   </div>
                 <% } %>
               </div>
@@ -166,14 +171,16 @@
       </div>
     </div>
     <div class="row">
-      <% for (let i=0; i<post.length; i++) { %>
+      <% for (let i=post.length-1; i>=0; i--) { %>
 
         <div class="col">
-          <div class="card" style="width: 25rem;">
-            <div class="card-header" style="height: 15rem;">
+          <div class="card my-2" style="width: 25rem;">
+            <div class="card-header" style="height: 12rem;">
               <div class="row">
                 <div class="col">
-                  <img src="<%= post[i].bookThumbnail %>" alt="<%= post[i].bookTitle %>" class="img-fluid">
+                  <div class="container">
+                    <img src="<%= post[i].bookThumbnail %>" alt="<%= post[i].bookTitle %>" class="img-fluid" style="max-width:80% !important">
+                  </div>
                 </div>
                 <div class="col">
                   <h4><%= post[i].bookTitle %></h4>
@@ -181,7 +188,7 @@
                 </div>
               </div>
             </div>
-            <div class="card-body">
+            <div class="card-body" style="height: 15rem">
               <div class="row">
                 <div class="col">
                   <h5><%= post[i].post %></h5>
@@ -189,7 +196,9 @@
                 </div>
                 <% if (post[i].image) { %>
                   <div class="col">
-                    <img src="<%= post[i].image %>" alt="<%= post[i].bookTitle %> project" class="img-fluid">
+                    <div class="container">
+                      <img src="<%= post[i].image %>" alt="<%= post[i].bookTitle %> project" class="img-fluid">
+                    </div>
                   </div>
                 <% } %>
               </div>

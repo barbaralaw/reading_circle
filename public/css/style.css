@@ -250,7 +250,8 @@ button,
 
 #myCarousel,
 #welcomeUser,
-#socialFeed {
+#socialFeed,
+#postDetails {
   margin-top: 100px;
 }
 
@@ -270,7 +271,8 @@ button,
 }
 
 #hero .card {
-  box-shadow: 11px 7px 16px #f9f9f9;
+  /*box-shadow: 11px 7px 16px #f9f9f9;*/
+  box-shadow: 11px 7px 16px #9e9e9e;
   border: 0;
   text-align: center;
 }
@@ -294,6 +296,21 @@ button,
 #contact h2 {
   text-align: center;
   color: grey;
+}
+
+#socialFeed a,
+#socialFeed a:hover,
+#socialFeed a:active,
+#socialFeed a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+#socialFeed  .card,
+#allPosts  .card,
+#recentPosts  .card {
+  box-shadow: 11px 7px 16px #9e9e9e;
+  border: 0;
 }
 
 /* Media Query for feed container card  on Desktop
