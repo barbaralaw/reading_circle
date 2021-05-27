@@ -31,7 +31,6 @@
               <div class="row">
                 <div class="col">
                   <h5><%= posts[i].post %></h5>
-                  <%= console.log(posts[i]) %>
                   <span>By: <%= posts[i].userName %></span>
                   <p><%= posts[i].postBody.substring(0,90) %><% if (posts[i].postBody.length > 90){ %>...<%} %></p>
                 </div>
@@ -94,5 +93,4 @@
       <a class="btn btn-primary" href="/post">Return to Dashboard</a>
     </div>
   </div>
-  <script src="js/webAPI.js"></script>
   <%- include('partials/footer') -%>
