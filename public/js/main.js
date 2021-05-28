@@ -59,7 +59,14 @@ submit.addEventListener('click', searchGoogle)
 moreResults.addEventListener('click', viewMoreResults)
 newSearch.addEventListener('click', resetSearch)
 
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
+
 function resetSearch() {
+  removeAllChildNodes(results)
   document.getElementById('searchGoogle').style.display = 'block'
   document.getElementById('post').style.display = 'none'
 }
@@ -67,6 +74,7 @@ function resetSearch() {
 function viewMoreResults() {
   start += 3
   finish = start + 3
+  // NEED TO CLEAR CURRENT RESULTS
   showData(start,finish)
 }
 
