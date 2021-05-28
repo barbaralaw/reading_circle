@@ -10,8 +10,65 @@ Array.from(deleteBtn).forEach((el)=>{
 
 const submit = document.getElementById('submit')
 const results = document.getElementById('results')
+const moreResults = document.getElementById('moreResults')
+const newSearch = document.getElementById('newSearch')
+let searchResults = []
+let start = 0;
+let finish = start + 3;
+
+function showData(start, finish) {
+  for (let i=start; i<finish; i++) {
+    console.log(searchResults[i])
+    let bookDetails = {
+      title: searchResults[i].volumeInfo.title,
+      authors: searchResults[i].volumeInfo.authors,
+      thumbnail: searchResults[i].volumeInfo.imageLinks.thumbnail
+    }
+    let thumb = document.createElement('img')
+      thumb.src = bookDetails.thumbnail
+      thumb.alt = bookDetails.title
+    let input = document.createElement('input')
+      input.type = 'radio'
+      input.id = 'rd'+i
+      input.name = 'foundBook'
+      input.value = JSON.stringify(bookDetails)
+    let label = document.createElement('label')
+      label.for = bookDetails.title
+      label.innerText = bookDetails.title
+    let divRadio = document.createElement('div')
+    divRadio.appendChild(input)
+    divRadio.appendChild(label)
+    let divCardBody = document.createElement('div')
+    divCardBody.classList.add("card-body")
+    divCardBody.appendChild(thumb)
+    divCardBody.appendChild(divRadio)
+    let divCard = document.createElement('div')
+    divCard.classList.add("card")
+    divCard.style.width = "18rem"
+    divCard.appendChild(divCardBody)
+    let divCol = document.createElement('div')
+    divCol.classList.add("col-md-4")
+    divCol.classList.add("d-flex")
+    divCol.classList.add("justify-content-center")
+    divCol.appendChild(divCard)
+    results.appendChild(divCol)
+  }
+}
 
 submit.addEventListener('click', searchGoogle)
+moreResults.addEventListener('click', viewMoreResults)
+newSearch.addEventListener('click', resetSearch)
+
+function resetSearch() {
+  document.getElementById('searchGoogle').style.display = 'block'
+  document.getElementById('post').style.display = 'none'
+}
+
+function viewMoreResults() {
+  start += 3
+  finish = start + 3
+  showData(start,finish)
+}
 
 function searchGoogle() {
   const title = document.getElementById('title')
@@ -22,51 +79,16 @@ function searchGoogle() {
   fetch (url+title.value)
     .then(res => res.json())
     .then(data => {
-      console.log(data.items[0].volumeInfo.title)
-
+      searchResults = data.items;
       document.getElementById('searchGoogle').style.display = 'none'
       document.getElementById('post').style.display = 'block'
+      /*
+      declare a start and a finish
+      set them to 0 and 3 initially
+      button would increment by 3
+      */
 
-      for (let i=0; i<3; i++) {
-        let bookDetails = {
-          title: data.items[i].volumeInfo.title,
-          authors: data.items[i].volumeInfo.authors,
-          thumbnail: data.items[i].volumeInfo.imageLinks.thumbnail
-        }
-        let thumb = document.createElement('img')
-          thumb.src = bookDetails.thumbnail
-          thumb.alt = bookDetails.title
-        let input = document.createElement('input')
-          input.type = 'radio'
-          input.id = 'rd'+i
-          input.name = 'foundBook'
-          input.value = JSON.stringify(bookDetails)
-        let label = document.createElement('label')
-          label.for = bookDetails.title
-          label.innerText = bookDetails.title
-        let divRadio = document.createElement('div')
-        divRadio.appendChild(input)
-        divRadio.appendChild(label)
-        let divCardBody = document.createElement('div')
-        divCardBody.classList.add("card-body")
-        divCardBody.appendChild(thumb)
-        divCardBody.appendChild(divRadio)
-        let divCard = document.createElement('div')
-        divCard.classList.add("card")
-        divCard.style.width = "18rem"
-        divCard.appendChild(divCardBody)
-        let divCol = document.createElement('div')
-        divCol.classList.add("col-md-4")
-        divCol.classList.add("d-flex")
-        divCol.classList.add("justify-content-center")
-        divCol.appendChild(divCard)
-        results.appendChild(divCol)
-        //let li = document.createElement('li')
-        //li.innerText = data.items[i].volumeInfo.title
-        //results.appendChild(li)
-      }
-
-
+      showData(start,finish)
     })
     .catch(err => {
       console.log(`error ${err}`)

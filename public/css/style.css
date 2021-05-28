@@ -251,7 +251,8 @@ button,
 #myCarousel,
 #welcomeUser,
 #socialFeed,
-#postDetails {
+#postDetails,
+#about {
   margin-top: 100px;
 }
 
