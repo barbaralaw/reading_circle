@@ -318,6 +318,12 @@ button,
   border: 0;
 }
 
+.hide {
+   position: absolute !important;
+   top: -9999px !important;
+   left: -9999px !important;
+}
+
 /* Media Query for feed container card  on Desktop
 @media only screen and (min-width: 992px) {
   /* Makes font size more consistent on bigger screens
