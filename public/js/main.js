@@ -88,7 +88,7 @@ function searchGoogle() {
   const url = "https://www.googleapis.com/books/v1/volumes?q="
   console.log('here')
 
-  fetch (url+title.value)
+  fetch (url+title.value+author.value)
     .then(res => res.json())
     .then(data => {
       searchResults = data.items;
