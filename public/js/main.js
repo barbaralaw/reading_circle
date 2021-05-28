@@ -12,9 +12,14 @@ const submit = document.getElementById('submit')
 const results = document.getElementById('results')
 const moreResults = document.getElementById('moreResults')
 const newSearch = document.getElementById('newSearch')
+let numBooks = 0
 let searchResults = []
 let start = 0;
 let finish = start + 3;
+
+function countBooks() {
+
+}
 
 function showData(start, finish) {
   for (let i=start; i<finish; i++) {
@@ -74,7 +79,6 @@ function resetSearch() {
 function viewMoreResults() {
   start += 3
   finish = start + 3
-  // NEED TO CLEAR CURRENT RESULTS
   showData(start,finish)
 }
 
@@ -90,12 +94,6 @@ function searchGoogle() {
       searchResults = data.items;
       document.getElementById('searchGoogle').style.display = 'none'
       document.getElementById('post').style.display = 'block'
-      /*
-      declare a start and a finish
-      set them to 0 and 3 initially
-      button would increment by 3
-      */
-
       showData(start,finish)
     })
     .catch(err => {

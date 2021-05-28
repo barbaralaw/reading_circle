@@ -116,40 +116,42 @@
       <% for (let i=post.length-1; i>=Math.max(post.length-3,0); i--) { %>
 
         <div class="col">
-          <div class="card my-2" style="width: 25rem;">
-            <div class="card-header" style="height: 12rem">
-              <div class="row">
-                <div class="col">
-                  <div class="container">
-                    <img src="<%= post[i].bookThumbnail %>" alt="<%= post[i].bookTitle %>" class="img-fluid" style="max-width:80% !important">
-                  </div>
-                </div>
-                <div class="col">
-                  <h4><%= post[i].bookTitle %></h4>
-                  <span><%= post[i].bookAuthor %></span>
-                </div>
-              </div>
-            </div>
-            <div class="card-body" style="height: 15rem">
-              <div class="row">
-                <div class="col">
-                  <h5><%= post[i].post %></h5>
-                  <p><%= post[i].postBody.substring(0,90) %><% if (post[i].postBody.length > 90){ %>...<%} %></p>
-                </div>
-                <% if (post[i].image) { %>
+          <a href="/postPage/<%= post[i]._id%>">
+            <div class="card my-2" style="width: 25rem;">
+              <div class="card-header" style="height: 12rem">
+                <div class="row">
                   <div class="col">
                     <div class="container">
-                      <img src="<%= post[i].image %>" alt="<%= post[i].bookTitle %> project" class="img-fluid">
+                      <img src="<%= post[i].bookThumbnail %>" alt="<%= post[i].bookTitle %>" class="img-fluid" style="max-width:80% !important">
                     </div>
-
                   </div>
-                <% } %>
+                  <div class="col">
+                    <h4><%= post[i].bookTitle %></h4>
+                    <span><%= post[i].bookAuthor %></span>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body" style="height: 15rem">
+                <div class="row">
+                  <div class="col">
+                    <h5><%= post[i].post %></h5>
+                    <p><%= post[i].postBody.substring(0,90) %><% if (post[i].postBody.length > 90){ %>...<%} %></p>
+                  </div>
+                  <% if (post[i].image) { %>
+                    <div class="col">
+                      <div class="container">
+                        <img src="<%= post[i].image %>" alt="<%= post[i].bookTitle %> project" class="img-fluid">
+                      </div>
+
+                    </div>
+                  <% } %>
+                </div>
+              </div>
+              <div class="card-body">
+                <a href="#" class="card-link">Card link</a>
               </div>
             </div>
-            <div class="card-body">
-              <a href="#" class="card-link">Card link</a>
-            </div>
-          </div>
+          </a>
         </div>
 
       <% } %>

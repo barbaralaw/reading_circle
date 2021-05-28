@@ -302,7 +302,11 @@ button,
 #socialFeed a,
 #socialFeed a:hover,
 #socialFeed a:active,
-#socialFeed a:visited {
+#socialFeed a:visited,
+#recentPosts a,
+#recentPosts a:hover,
+#recentPosts a:active,
+#recentPosts a:visited {
   text-decoration: none;
   color: black;
 }

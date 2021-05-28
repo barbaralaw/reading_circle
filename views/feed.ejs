@@ -56,39 +56,6 @@
 </section>
 <!-- End All Posts Section -->
 
-<!-- Post Feed Container --
-  <div class="container" id="feedContainer">
-    <div class="row row-cols-1 row-cols-md-2">
-      <% for(var i=0; i<posts.length; i++) {%>
-        <div class="col-sm-12 mb-5">
-          <div class="card mx-auto">
-            <a href="/postPage/<%= posts[i]._id%>">
-              <img class="card-img-top" src="<%= posts[i].image%>">
-            </a>
-            <div class="card-body">
-              <!-- Like Button --
-              <button class="btn btn-primary fa fa-heart" type="submit"></button>
-              <!-- Comment Button --
-              <button class="btn btn-primary fa fa-comment" type="submit"></button>
-              <!-- Share Button --
-              <button class="btn btn-primary fas fa-paper-plane" type="submit"></button>
-              <!-- Save or Bookmark Button --
-              <button class="btn btn-primary fas fa-bookmark float-end" type="submit"></button>
-
-              <h5 class="card-title">
-                <%= posts[i].post %>
-              </h5>
-              <p class="card-text">
-                <%= posts[i].postBody %>
-              </p>
-
-            </div>
-          </div>
-        </div>
-        <% } %>
-    </div>
--->
-
     <div class="row justify-content-center mt-5">
       <a class="btn btn-primary" href="/post">Return to Dashboard</a>
     </div>
