@@ -35,20 +35,25 @@
 <section id="bookSearch">
   <div class="container">
     <div class="row">
-      
+      <h2>What are you Reading? Share it</h2>
+      <p>Please search for your book using the input boxes below. Be sure to use the full title and author if you can.</p>
     </div>
-    <div class="row align-items-left">
-      <h2>Search for a book</h2>
-    </div>
-    <div class="row align-items-center" id="searchGoogle">
-      <div class="col-md-4 d-flex justify-content-center">
-        <input type="text" id="title" placeholder="title">
-        <input type="text" id="author" placeholder="author">
+    <div id="searchGoogle">
+      <div class="row align-items-left">
+        <h3>Search for a book</h3>
       </div>
-      <div class="col-md-4 d-flex justify-content-center">
-        <button id="submit" type="button" class="btn btn-dark btn-lg">Search</button>
+
+      <div class="row align-items-center" id="searchGoogle">
+        <div class="col-md-4 d-flex justify-content-center">
+          <input type="text" id="title" placeholder="title">
+          <input type="text" id="author" placeholder="author">
+        </div>
+        <div class="col-md-4 d-flex justify-content-center">
+          <button id="submit" type="button" class="btn btn-dark btn-lg">Search</button>
+        </div>
       </div>
     </div>
+
   </div>
 </section>
 <!-- End Book Search Section -->
@@ -68,8 +73,10 @@
           </div>
 
           <!--<ul id="results"></ul>-->
-          <button id="moreResults" type="button" class="btn btn-dark btn-lg">More Results</button>
-          <button id="newSearch" type="button" class="btn btn-dark btn-lg">New Search</button>
+          <div class="pt-3">
+            <button id="moreResults" type="button" class="btn btn-dark btn-lg">See More Results</button>
+            <button id="newSearch" type="button" class="btn btn-dark btn-lg">New Search</button>
+          </div>
         </div>
         <div class="container">
           <div class="row cards" style="max-height:300px">
@@ -83,20 +90,20 @@
                     <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
                     <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"/>
                   </svg>
-                  Select an Image
+                  Add a Picture
                 </label>
                 <input type="file" class="form-control hide" id="imageUpload" name="file" accept="image/*" onchange="loadFile(event)" />
               </div>
             </div>
             <div class='col justify-content-center'>
               <div class="row">
-                <input type="text" placeholder="Enter Post Title" name='post'>
+                <input type="text" placeholder="What did you think?" name='post'>
               </div>
               <div class="row">
-                <input type="text" placeholder="Body of Post" name='postBody' style="height:100px">
+                <input type="text" placeholder="Tell us more" name='postBody' style="height:100px">
               </div>
               <div class="row">
-                <button type="submit" class="btn btn-dark btn-lg" value="Add Post">Add Post</button>
+                <button type="submit" class="btn btn-dark btn-lg" value="Add Post">Share Now</button>
               </div>
             </div>
           </div>
