@@ -244,7 +244,8 @@ section p {
 }
 
 button,
-#labelUpload {
+#labelUpload,
+#hero a {
   max-width: 50% !important;
   border-radius: 50px !important;
 }
