@@ -4,31 +4,80 @@
 <!-- Signup view for parent/child -->
 
 <%- include('partials/header') -%>
-    <% if (locals.messages.errors) { %>
-        <% messages.errors.forEach( el => { %>
-            <div class="alert alert-danger"><%= el.msg %></div>
-        <% }) %>
-    <% } %>
-    <div class="container card text-center shadow " style="margin: 7rem auto; min-width: 300px; max-width: 450px; height: auto">
-    <form action="/signup" method="POST" class="btn-group flex-column">
-        <input type="text" name="userName" placeholder="User Name" class="form-control btn-lg my-2">
+<section id="signUpBox">
+  <!-- Error Notification -->
+  <% if (locals.messages.errors) { %>
+      <% messages.errors.forEach( el => { %>
+          <div class="alert alert-danger"><%= el.msg %></div>
+      <% }) %>
+  <% } %>
+  <!-- End Error Notification -->
 
-        <input type="text" name="firstNameParent" placeholder="Parent/Guardian First Name" class="form-control btn-lg my-2">
-        <input type="text" name="lastNameParent" placeholder="Parent/Guardian Last Name" class="form-control btn-lg my-2">
-        <input type="email" name="email" placeholder="Parent's Email" class="form-control btn-lg my-2">
-        <input type="password" name="password" placeholder="Parent's Password" class="form-control btn-lg my-2">
-        <input type="password" name="confirmPassword" placeholder="Confirm Parent's Password" class="form-control btn-lg my-2">
-
-        <input type="text" name="firstNameChild" placeholder="Child First Name" class="form-control btn-lg my-2">
-        <!-- add additional students? -->
-
-        <!-- Include input area for joining a class group? -->
-
-        <input type="submit" class="btn btn-outline-primary btn-lg col">
-        <!-- Add later
-          <p class="my-0">Need to sign up as a teacher? <a href="/teacher_signup">SIGN UP</a></p>
-        -->
-        <p class="my-0">Already have an account? <a href="/login">LOG IN</a></p>
-    </form>
+  <div class="container card text-center shadow " style="margin: 7rem auto; min-width: 300px; max-width: 450px; height: auto">
+  <form action="/signup" method="POST" class="btn-group flex-column">
+    <img src="../imgs/cover.png" alt="reading circle" width="100%">
+    <div class="form-floating">
+      <input type="text" name="userName" placeholder="User Name" class="form-control btn-lg my-2">
+      <label for="userName">Unique username</label>
     </div>
-    <%- include('partials/footer') -%>
+    <div class="form-floating">
+      <input type="text" id="firstNameParent" name="firstNameParent" placeholder="Parent/Guardian First Name" class="form-control btn-lg my-2">
+      <label for="firstNameParent">Parent/Guardian First Name</label>
+    </div>
+    <div class="form-floating">
+      <input type="text" id="lastNameParent" name="lastNameParent" placeholder="Parent/Guardian Last Name" class="form-control btn-lg my-2">
+      <label for="lastNameParent">Parent/Guardian Last Name</label>
+    </div>
+    <div class="form-floating">
+      <input type="email" name="email" placeholder="Parent's Email" class="form-control btn-lg my-2">
+      <label for="email">Parent/Guardian Email Address</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" name="password" placeholder="Parent's Password" class="form-control btn-lg my-2">
+      <label for="password">Password</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" name="confirmPassword" placeholder="Confirm Parent's Password" class="form-control btn-lg my-2">
+      <label for="confirmPassword">Confirm Password</label>
+    </div>
+    <div class="form-floating">
+      <input type="text" name="firstNameChild" placeholder="Child First Name" class="form-control btn-lg my-2">
+      <label for="firstNameChild">Child First Name</label>
+      <!-- add additional students? -->
+    </div>
+    <!-- Include input area for joining a class group? -->
+    <div class="">
+      <button type="submit" class="btn btn-dark btn-lg">Create Account</button>
+    </div>
+
+    <!-- Add later
+      <p class="my-0">Need to sign up as a teacher? <a href="/teacher_signup">SIGN UP</a></p>
+    -->
+    <p class="my-0">Already have an account? <a href="/login">LOG IN</a></p>
+  </form>
+  </div>
+</section>
+
+<%- include('partials/footer') -%>
+
+
+
+        <div class="container card text-center shadow " style="margin: 7rem auto; min-width: 300px; max-width: 450px; height: auto">
+        <form action="/login" method="POST" class="btn-group flex-column">
+            <img src="../imgs/cover.png" alt="reading circle" width="100%">
+            <!-- Find out how to switch to a userName login -->
+            <div class="form-floating">
+              <input type="email" id="email" name="email" placeholder="Email" class="form-control btn-lg my-2">
+              <label for="email">E-mail:</label>
+            </div>
+            <div class="form-floating">
+              <input type="password" id="password" name="password" placeholder="Password" class="form-control btn-lg my-2">
+              <label for="password">Password:</label>
+            </div>
+            <div class="">
+              <button type="submit" class="btn btn-dark btn-lg">Sign In</button>
+            </div>
+
+            <p class="my-0" style="padding-top: 20px">Don't have an account yet? <a href="/signup">SIGN UP</a></p>
+        </form>
+        </div>
