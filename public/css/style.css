@@ -200,7 +200,7 @@ body {
 
 nav,
 footer {
-  background-color: rgba(243,105,32,1);
+  background-color: #fb690a;
 }
 
 .navbar-brand img {
@@ -294,7 +294,7 @@ button,
 
 #contact {
   text-align: center;
-  background-color: rgba(243,105,32,1);
+  background-color: #fb690a;
   color: white;
 }
 
