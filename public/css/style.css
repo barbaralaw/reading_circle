@@ -198,7 +198,8 @@ body {
   overflow-x: hidden;
 }
 
-nav {
+nav,
+footer {
   background-color: rgba(243,105,32,1);
 }
 
