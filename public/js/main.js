@@ -60,9 +60,16 @@ function showData(start, finish) {
   }
 }
 
-submit.addEventListener('click', searchGoogle)
-moreResults.addEventListener('click', viewMoreResults)
-newSearch.addEventListener('click', resetSearch)
+if (submit) {
+  submit.addEventListener('click', searchGoogle)
+}
+if (moreResults) {
+  moreResults.addEventListener('click', viewMoreResults)
+}
+if (newSearch) {
+  newSearch.addEventListener('click', resetSearch)
+}
+
 
 function removeAllChildNodes(parent) {
     while (parent.firstChild) {
@@ -145,7 +152,10 @@ async function deletePost(){
 }
 
 const seeAllMyPosts = document.getElementById('seeAllPosts')
-seeAllMyPosts.addEventListener('click', seeAllPosts);
+if (seeAllMyPosts) {
+  seeAllMyPosts.addEventListener('click', seeAllPosts);
+}
+
 
 function seeAllPosts() {
   document.getElementById('recentPosts').style.display = "none";
@@ -154,7 +164,10 @@ function seeAllPosts() {
 }
 
 const seeLessMyPosts = document.getElementById('seeLessPosts')
-seeLessMyPosts.addEventListener('click', seeLessPosts);
+if (seeLessMyPosts) {
+  seeLessMyPosts.addEventListener('click', seeLessPosts);
+}
+
 
 function seeLessPosts() {
   document.getElementById('recentPosts').style.display = "flex";

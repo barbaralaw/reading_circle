@@ -6,193 +6,13 @@
 }
 
 /*
-h1,
-h2 {
-    color: #123554;
-}
-
-.completed{
-    text-decoration: line-through;
-    color: gray;
-}
-
-.not{
-    text-decoration: underline;
-}
-
-header{
-    margin: 0 !important;
-    width: 100%;
-    padding-top: 2%;
-}
-
-span{
-    color: rgba(37,112,176,255);
-}
-
-
-a:link {
-    text-decoration: none;
-  }
-
-
-.card {
-  padding: 1rem;
-  min-height: 30vh;
-}
-
-.btn {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
-.mt-7 {
-  margin-top: 7rem;
-}
-
-
-.inline {
-  display: inline-block;
-}
-
-.pcontainer {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-ul.pcontainer {
-  list-style-type: none;
-}
-.pcontainer .card {
-  display: flex;
-  justify-content: space-between;
-}
-.pcontainer .todoItem {
-
-}
-.row.ret {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-
-#imageUpload[type='file'] {
-  display: none
-}
-
-#uploadPreview {
-  max-width: 8rem;
-  max-height: 6rem;
-  display: block;
-  margin-left: 2rem;
-}
-
-#post input[type='submit'] {
-  display: block;
-}
-
-#footerIMG{
-  display: flex;
-  justify-content: center;
-  margin: auto;
-  width: 80vw;
-  height: auto;
-}
-
-ul {
-  margin-top: 1rem;
-  display:flex;
-  justify-content: space-between;
-  font-size: 2vw;
-  list-style: none;
-
-}
-
-/* .githubContainer ul{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-} */
-
-/* Card-Body
-.card-body {
-  padding: 0.5rem 1rem;
-}
-
-/* Container Spacing
-.container {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
-} */
-
-/* News Card Layout
-
-#newsContainer .card {
-  overflow: hidden;
-  border: none;
-  box-shadow: 2px 4px #d6d6d6;
-}
-
-#newsContainer .card .card-img-overlay {
-  background: linear-gradient( rgba(26,26,27,0.2), rgba(26,26,27,0.3), rgba(26,26,27,0.4), rgba(26,26,27,0.6), rgba(26,26,27,0.8), #1A1A1B );;
-}
-
-#newsContainer  .card .card-title {
-  position: absolute;
-  left: 5%;
-  bottom: 5%;
-  color: white;
-  font-size: 18px;
-  margin-bottom: 0;
-}
-
-#newsContainer  .card .card-text {
-  color: white;
-  font-size: 14px;
-  word-wrap: break-word;
-}
-
-
-/* Feed Cards Layout
-
-#feedContainer .card {
-  border: 1px solid #cccccc;
-  border-radius: 5%;
-  box-shadow: 2px 4px rgba(37,112,176,0.15);
-}
-
-#feedContainer .card-img-top {
-  width: 100%;
-  object-fit: contain;
-  border-top-left-radius: 5%;
-  border-top-right-radius: 5%;
-}
-
-
-#feedContainer .card-title {
-  font-size: 1.75rem;
-  color: #1d1d1d;
-  border-bottom: 1px solid rgba(37,112,176,255);
-
-}
-
-#feedContainer .card-text {
-  font-size: 1.15rem;
-  color: #646464;
-}
-
-#feedContainer .btn {
-  margin-top: 0.15rem;
-  margin-bottom: 0.15rem;
-}
-
-/* Media Query for News container on Tablet
-@media only screen and (min-width: 768px) {
-  /* Makes font size more readable on tablet
-  #newsContainer  .card .card-title {
-    font-size: 0.9rem;
-  }
-}
+=== STYLE COLOR GUIDE ===
+orange = #fb690a;
+veryDarkGrey = #2f2e41;
+white = white;
+lightGrey = #e5e5e5;
 */
+
 body {
   display: block;
   overflow-x: hidden;
@@ -215,13 +35,14 @@ footer {
 }
 
 nav ul li a {
-  color: grey;
+  color: white;
   font-size: 22px;
   margin: auto 10px;
 }
 
 nav ul li a:hover {
   color: white;
+  text-decoration: underline;
 }
 
 section {
@@ -245,7 +66,8 @@ section p {
 
 button,
 #labelUpload,
-#hero a {
+#hero a,
+#socialFeed a {
   max-width: 50% !important;
   border-radius: 50px !important;
 }
@@ -310,7 +132,11 @@ button,
 #recentPosts a,
 #recentPosts a:hover,
 #recentPosts a:active,
-#recentPosts a:visited {
+#recentPosts a:visited,
+#allPosts a,
+#allPosts a:hover,
+#allPosts a:active,
+#allPosts a:visited {
   text-decoration: none;
   color: black;
 }
