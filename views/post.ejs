@@ -2,6 +2,45 @@
 
 <section id="postDetails">
   <div class="container">
+    <div class="row">
+        <h1><%= post.post %></h1>
+        <h4>By: <%= post.userName %></h4>
+    </div>
+    <div class="card my-2" style="width: 25rem;">
+      <div class="row">
+        <div class="col">
+          <img class="img-fluid" src="<%= post.bookThumbnail %>" alt="<%= post.bookTitle %>">
+        </div>
+        <div class="col">
+          <h6><%= post.bookTitle %></h6>
+          <p>By: <%= post.bookAuthor %></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <% if (post.postBody) { %>
+        <div class="col">
+          <p><%= post.postBody %></p>
+        </div>
+      <% } %>
+      <% if (post.image) { %>
+        <div class="col">
+          <img src="<%= post.image %>" alt="<%= post.post %>" style="max-width: 50%">
+        </div>
+      <% } %>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!--
+
+<section id="postDetails">
+  <div class="container">
     <div class="row justify-content-center mt-5">
       <div class="col-sm-6 d-flex flex-column">
         <h2 class="mb-3"><%= post.post %></h2>
@@ -59,6 +98,7 @@
   </div>
 </section>
 
+-->
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="../magnific-popup/jquery.magnific-popup.js"></script>
