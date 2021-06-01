@@ -64,14 +64,6 @@ section p {
   font-weight: 300;
 }
 
-button,
-#labelUpload,
-#hero a,
-#socialFeed a {
-  max-width: 50% !important;
-  border-radius: 50px !important;
-}
-
 #myCarousel,
 #welcomeUser,
 #socialFeed,
@@ -110,14 +102,25 @@ button,
   margin-bottom: 20px;
 }
 
-#projects .projects {
-  margin-bottom: 50px;
+#projects .card {
+  padding: 2%;
+  border-radius: 10px;
+}
+
+#projects h2 {
+  color: white;
+}
+
+#projects img {
+  border-radius: 10px 0 0 10px;
+}
+
+#projects {
+  background-color: #fb690a;
 }
 
 #contact {
   text-align: center;
-  background-color: #fb690a;
-  color: white;
 }
 
 #contact h2 {
@@ -154,14 +157,24 @@ button,
    left: -9999px !important;
 }
 
-.greyButton {
+.greyRoundButton {
+  max-width: 50% !important;
+  border-radius: 50px !important;
   background-color: #2f2e41;
   color: white;
 }
 
-.greyButton:hover {
+.greyRoundButton:hover {
   background-color: #e5e5e5;
   color: #2f2e41;
+}
+
+blockquote {
+  width: 70%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  font-size: 1.5rem;
+  font-family: fantasy;
 }
 
 /* Media Query for feed container card  on Desktop
