@@ -1,7 +1,7 @@
-# readalong Project README
-The readalong app gives students, parents, and teachers a place to share their daily reading and related projects. Students will see their teacher's bookshelf, recommendations, and assignments, and will be able to add titles from their own bookshelves to their online 'shelf.' Classmates will get to experience the art and projects inspired by their fellows, and can read about their friends' experiences with the titles they've also read.
+# reading circle Project README
+The reading circle app gives students, parents, and teachers a place to share their daily reading and related projects. Students will see their teacher's bookshelf, recommendations, and assignments, and will be able to add titles from their own bookshelves to their online 'shelf.' Classmates will get to experience the art and projects inspired by their fellows, and can read about their friends' experiences with the titles they've also read.
 
-In our increasingly virtual classroom, readalong provides an inviting circle in which to share the joy of reading.
+In our increasingly virtual classroom, reading circle provides an inviting circle in which to share the joy of reading.
 
 ## Currently working on V1.0
 Working towards releasing MVP. This phase includes the following features/capabilities:
