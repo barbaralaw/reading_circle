@@ -8,7 +8,7 @@ module.exports = {
     try {
       const postItems = await Post.find({ userId: req.user.id });
       // const itemsLeft = await Todo.countDocuments({userId:req.user.id,completed: false})
-      res.render("dashboard.ejs", { post: postItems, user: req.user });
+      res.render("dashboard.ejs", { post: postItems, user: req.user});
     } catch (err) {
       console.log(err);
     }

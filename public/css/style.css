@@ -54,7 +54,7 @@ section h1,
 section h2 {
   text-transform: uppercase;
   font-weight: 900;
-  color: grey;
+  color: #2f2e41;
   text-align: left;
   margin-bottom: 20px
 }
@@ -122,7 +122,7 @@ button,
 
 #contact h2 {
   text-align: center;
-  color: grey;
+  color: #2f2e41;
 }
 
 #socialFeed a,
@@ -152,6 +152,16 @@ button,
    position: absolute !important;
    top: -9999px !important;
    left: -9999px !important;
+}
+
+.greyButton {
+  background-color: #2f2e41;
+  color: white;
+}
+
+.greyButton:hover {
+  background-color: #e5e5e5;
+  color: #2f2e41;
 }
 
 /* Media Query for feed container card  on Desktop

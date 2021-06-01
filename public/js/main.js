@@ -69,18 +69,31 @@ if (moreResults) {
 if (newSearch) {
   newSearch.addEventListener('click', resetSearch)
 }
+/*
+let showAccountDetails = false;
+if (accountInfoMore) {
+  accountInfoMore.addEventListener('click', toggleAccountDetails)
+  accountInfoLess.addEventListener('click', toggleAccountDetails)
+}
 
+function toggleAccountDetails() {
+  showAccountDetails = !showAccountDetails
+  if (showAccountDetails) {
+    document.getElementById('#accountInfoLess').classList.remove = 'hide'
+    document.getElementById('#accountDetails').classList.remove = 'hide'
+    document.getElementById('#accountInfoMore').classList.append = 'hide'
+  } else {
+    document.getElementById('#accountInfoLess').classList.append = 'hide'
+    document.getElementById('#accountDetails').classList.append = 'hide'
+    document.getElementById('#accountInfoMore').classList.append = 'hide'
+  }
+}
+*/
 
 function removeAllChildNodes(parent) {
     while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
     }
-}
-
-function resetSearch() {
-  removeAllChildNodes(results)
-  document.getElementById('searchGoogle').style.display = 'block'
-  document.getElementById('post').style.display = 'none'
 }
 
 function viewMoreResults() {
@@ -104,8 +117,17 @@ function searchGoogle() {
       showData(start,finish)
     })
     .catch(err => {
+      console.log('no results')
       console.log(`error ${err}`)
     })
+}
+
+function resetSearch() {
+  removeAllChildNodes(results)
+  title.innerText = ''
+  author.innerText = ''
+  document.getElementById('searchGoogle').style.display = 'block'
+  document.getElementById('post').style.display = 'none'
 }
 
   /* const xhr = new XMLHttpRequest
@@ -174,10 +196,6 @@ function seeLessPosts() {
   document.getElementById('allPosts').style.display = "none";
   document.getElementById('allPosts').style.flexWrap = "wrap";
 }
-
-
-const myCarousel = document.querySelector('#myCarousel')
-const carousel = new bootstrap.Carousel(myCarousel)
 
 // async function markComplete(){
 //     const todoId = this.parentNode.dataset.id
