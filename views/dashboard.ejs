@@ -12,10 +12,10 @@
           <div class="container">
             <p>A little bit about your reading:</p>
             <ul>
-              <li>You have read #### books</li>
-              <li>Those books had a total of #### pages!</li>
-              <li>You have written #### words total about these books</li>
-              <li>You have added #### images related to them, too.</li>
+              <li>You have read <%= user.bookCount %> books</li>
+              <li>Those books had a total of <%= user.pagesCount %> pages!</li>
+              <li>You have written <%= user.wordCount %> words total about these books</li>
+              <li>You have added <%= user.imageCount %> images related to them, too.</li>
             </ul>
           </div>
         </div>
