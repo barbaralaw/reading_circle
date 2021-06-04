@@ -73,7 +73,11 @@ const User = require('../models/User')
       lastNameParent: req.body.lastNameParent,
       email: req.body.email,
       password: req.body.password,
-      firstNameChild: req.body.firstNameChild
+      firstNameChild: req.body.firstNameChild,
+      bookCount: 0,
+      pagesCount: 0,
+      wordCount: 0,
+      imageCount: 0
     })
 
     User.findOne({$or: [

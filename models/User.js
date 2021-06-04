@@ -6,10 +6,12 @@ const UserSchema = new mongoose.Schema({
   firstNameParent: String,
   lastNameParent: String,
   email: { type: String, unique: true },
-
   password: String,
-
-  firstNameChild: String
+  firstNameChild: String,
+  bookCount: Number,
+  pagesCount: Number,
+  wordCount: Number,
+  imageCount: Number
 })
 
 // Password hash middleware.
