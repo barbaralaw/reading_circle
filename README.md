@@ -3,26 +3,27 @@ The reading circle app gives students, parents, and teachers a place to share th
 
 In our increasingly virtual classroom, reading circle provides an inviting circle in which to share the joy of reading.
 
-## Currently working on V1.0
+## Version 1.0 is Live!
+Parents can sign their child up for a free reading circle account to track books read, upload related projects, and save reviews.
+
+## Currently working on V1.1
 Working towards releasing MVP. This phase includes the following features/capabilities:
-- Parent can sign 1 child up
-- Child can search Google Books for their book
-- Child can upload media & enter reaction to book
-- Dashboard view shows child's books + media
+- Add teacher role & create classroom cohort
+- See classmate posts
+- Edit/Add more media and words to books
+- Search classmate books
 
 ## Next on the to-do list:
 - Display x more posts at a time vs 3/all
-- Style post card
-  - Smaller book thumbnail
-  - Show image
-  - Layout card in beautiful way
-- Style feed page cards
+- Make post image clickable to view at enlarged/full size
+- Enable teacher account to share media with entire class (e.g. YouTube read-aloud, images, announcements)
+- Have user statistics enabled and updating
 
-### On deck for V1.1
+### On deck for future updates
 - Search own previous books
-- Add/edit posts to same book
-- Create landing page
-- Add cohesive colors and branding
+- See bookshelf of previous books
+- Create a 'Want to Read' list
+- Track more reading statistics (daily reading log, streak counter, etc.)
 
 ## Package dependencies
 bcrypt, cloudinary, connect-mongo, dotenv, ejs, express, express-flash, express-session, method-override, mongodb, mongoose, morgan, multer, nodemon, passport, passport-local, validator, xmlhttprequest
