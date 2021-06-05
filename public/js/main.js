@@ -27,7 +27,8 @@ function showData(start, finish) {
     let bookDetails = {
       title: searchResults[i].volumeInfo.title,
       authors: searchResults[i].volumeInfo.authors,
-      thumbnail: searchResults[i].volumeInfo.imageLinks.thumbnail
+      thumbnail: searchResults[i].volumeInfo.imageLinks.thumbnail,
+      pageCount: searchResults[i].volumeInfo.pageCount,
     }
     let thumb = document.createElement('img')
       thumb.src = bookDetails.thumbnail

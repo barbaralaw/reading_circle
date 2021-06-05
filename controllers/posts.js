@@ -1,4 +1,5 @@
 const Post = require("../models/Post");
+const User = require("../models/User");
 const path = require("path");
 const cloudinary = require("../middleware/cloudinary")
 
@@ -63,10 +64,25 @@ module.exports = {
         postBody: req.body.postBody,
         userName: req.user.firstNameChild,
         userId: req.user.id,
-
       });
       console.log("Post has been added!");
+      req.user.bookCount += 1
+      if (foundBook.pageCount) {
+        console.log(foundBook.pageCount, req.user.pagesCount)
+        req.user.pagesCount += foundBook.pageCount
+      }
+      if (req.body.postBody) {
+        console.log((req.body.postBody).split(' '))
+        console.log(((req.body.postBody).split(' ')).length, req.user.wordCount)
+        let words = (req.body.postBody).split(' ')
+        req.user.wordCount += words.length
+      }
+      if (result.secure_url) {
+        req.user.imageCount += 1
+      }
+      await req.user.save()
       res.redirect("/post");
+
     } catch (err) {
       console.log(err);
     }
