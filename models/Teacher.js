@@ -8,16 +8,12 @@ const TeacherSchema = new mongoose.Schema({
   firstName: String,
   lastName: String,
   teacherName: String,
-  classroomId: { type: String, unique: true },
-  bookCount: Number,
-  pagesCount: Number,
-  wordCount: Number,
-  imageCount: Number
+  classroomId: { type: String, unique: true }
 })
 
 // Password hash middleware.
 
- UserSchema.pre('save', function save(next) {
+ TeacherSchema.pre('save', function save(next) {
   const user = this
   if (!user.isModified('password')) { return next() }
   bcrypt.genSalt(10, (err, salt) => {
@@ -33,11 +29,11 @@ const TeacherSchema = new mongoose.Schema({
 
 // Helper method for validating user's password.
 
-UserSchema.methods.comparePassword = function comparePassword(candidatePassword, cb) {
+TeacherSchema.methods.comparePassword = function comparePassword(candidatePassword, cb) {
   bcrypt.compare(candidatePassword, this.password, (err, isMatch) => {
     cb(err, isMatch)
   })
 }
 
 
-module.exports = mongoose.model('User', UserSchema)
+module.exports = mongoose.model('Teacher', TeacherSchema)

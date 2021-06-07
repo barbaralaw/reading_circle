@@ -1,6 +1,5 @@
 const passport = require('passport')
 const validator = require('validator')
-const generateUniqueId = require('generate-unique-id')
 const User = require('../models/User')
 
  exports.getLogin = (req, res) => {
@@ -67,29 +66,31 @@ const User = require('../models/User')
       return res.redirect('../signup')
     }
     req.body.email = validator.normalizeEmail(req.body.email, { gmail_remove_dots: false })
-
-    const teacher = new Teacher({
-      userName: req.body.userName,
-      email: req.body.email,
-      password: req.body.password,
-      firstName: req.body.firstNameTeacher,
-      lastName: req.body.lastNameTeacher,
-      teacherName: req.body.officialName,
-      classroomId: generateUniqueId({ length: 10, excludeSymbols: ['L','l','I','O','0','1']}),
-    })
-
-    const user = new User({
-      userName: req.body.userName,
-      firstNameParent: req.body.firstNameParent,
-      lastNameParent: req.body.lastNameParent,
-      email: req.body.email,
-      password: req.body.password,
-      firstNameChild: req.body.firstNameChild,
-      bookCount: 0,
-      pagesCount: 0,
-      wordCount: 0,
-      imageCount: 0
-    })
+    let user;
+    if (req.body.firstNameParent) {
+      user = new User({
+        userName: req.body.userName,
+        firstNameParent: req.body.firstNameParent,
+        lastNameParent: req.body.lastNameParent,
+        email: req.body.email,
+        password: req.body.password,
+        firstNameChild: req.body.firstNameChild,
+        bookCount: 0,
+        pagesCount: 0,
+        wordCount: 0,
+        imageCount: 0
+      })
+    } else {
+      user = new User({
+        userName: req.body.userName,
+        email: req.body.email,
+        password: req.body.password,
+        firstNameTeacher: req.body.firstNameTeacher,
+        lastNameTeacher: req.body.lastNameTeacher,
+        teacherName: req.body.officialName,
+        classroomId: new Date().valueOf()
+      })
+    }
 
     User.findOne({$or: [
       {email: req.body.email},

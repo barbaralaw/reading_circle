@@ -11,7 +11,11 @@ const UserSchema = new mongoose.Schema({
   bookCount: Number,
   pagesCount: Number,
   wordCount: Number,
-  imageCount: Number
+  imageCount: Number,
+  firstNameTeacher: String,
+  lastNameTeacher: String,
+  teacherName: String,
+  classroomId: { type: String, unique: true }
 })
 
 // Password hash middleware.
