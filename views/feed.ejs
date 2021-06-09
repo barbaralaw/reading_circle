@@ -16,7 +16,7 @@
   </div>
 </section>
 
-<!-- All Posts Section --
+<!-- All Posts Section -->
 <section id="socialFeed">
   <div class="container">
     <div class="row">
@@ -26,7 +26,7 @@
     </div>
     <div class="row">
       <% for (let i=posts.length-1; i>=0; i--) { %>
-
+        
         <div class="col">
           <a href="/postPage/<%= posts[i]._id%>">
           <div class="card my-2" style="width: 25rem;">
@@ -56,6 +56,7 @@
                       <img src="<%= posts[i].image %>" alt="<%= posts[i].bookTitle %> project" class="img-fluid">
                     </div>
                   </div>
+
                 <% } %>
               </div>
             </div>
