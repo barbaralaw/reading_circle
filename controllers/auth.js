@@ -75,6 +75,8 @@ const User = require('../models/User')
         email: req.body.email,
         password: req.body.password,
         firstNameChild: req.body.firstNameChild,
+        teacherName: '',
+        classroomId: 0,
         bookCount: 0,
         pagesCount: 0,
         wordCount: 0,

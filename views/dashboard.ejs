@@ -18,6 +18,13 @@
               <li>You have added <%= user.imageCount %> images related to them, too.</li>
             </ul>
           </div>
+          <div class="container">
+            <p>Join a classroom</p>
+            <form action="/post/joinClassroom" method='POST'>
+              <input type="string" name="classroomCode" value="">
+              <button id="joinClassroom" type="submit" name="button">Join Class</button>
+            </form>
+          </div>
         </div>
         <div class="col">
           <div class="container">
@@ -37,6 +44,8 @@
                     <dd><%= user.userName %></dd>
                     <dt>Parent e-mail:</dt>
                     <dd><%= user.email %></dd>
+                    <dt>Classroom ID:</dt>
+                    <dd><%= user.classroomId %></dd>
                   </dl>
                 </div>
               </div>

@@ -87,6 +87,19 @@ module.exports = {
       console.log(err);
     }
   },
+
+  joinClassroom: async(req, res) => {
+    try {
+      console.log('code is: ', req.body.classroomCode)
+
+      req.user.classroomId = Number(req.body.classroomCode)
+      await req.user.save()
+      
+      res.redirect("/post")
+    } catch (err) {
+      console.log(err)
+    }
+  },
   // markComplete: async (req, res)=>{
   //     try{
   //         await Todo.findOneAndUpdate({_id:req.body.todoIdFromJSFile},{
