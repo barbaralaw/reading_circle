@@ -12,5 +12,7 @@ router.post('/login', authController.postLogin)
 router.get('/logout', authController.logout)
 router.get('/signup', authController.getSignup)
 router.post('/signup', authController.postSignup)
+router.post('/teacherSignup', authController.getTeacherSignup)
+router.post('/teacherSignup', authController.postTeacherSignup)
 
 module.exports = router

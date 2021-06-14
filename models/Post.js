@@ -22,7 +22,7 @@ const PostSchema = new mongoose.Schema({
     required: true,
   },
   userId: {
-    type: mongoose.Schema.Types.ObjectId, ref: 'User', 
+    type: mongoose.Schema.Types.ObjectId, ref: 'User',
     //type: String,
     required: true,
   },
@@ -38,6 +38,10 @@ const PostSchema = new mongoose.Schema({
     type: String,
     require: false,
   },
+  classroomId: {
+    type: Number,
+    require: false,
+  }
 })
 
 module.exports = mongoose.model('Post', PostSchema)

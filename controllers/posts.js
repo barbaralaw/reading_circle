@@ -64,10 +64,11 @@ module.exports = {
         postBody: req.body.postBody,
         userName: req.user.firstNameChild,
         userId: req.user.id,
+        classroomId: req.user.classroomId
       });
       console.log("Post has been added!");
       req.user.bookCount += 1
-      if (foundBook.pageCount) {
+      if (typeof foundBook.pageCount == Number) {
         console.log(foundBook.pageCount, req.user.pagesCount)
         req.user.pagesCount += foundBook.pageCount
       }
@@ -94,7 +95,7 @@ module.exports = {
 
       req.user.classroomId = Number(req.body.classroomCode)
       await req.user.save()
-      
+
       res.redirect("/post")
     } catch (err) {
       console.log(err)

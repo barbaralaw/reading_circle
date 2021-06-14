@@ -1,5 +1,6 @@
 <%- include('partials/header') -%>
 
+<!--
 <section id="socialFeed">
   <div class="container">
     <div class="row">
@@ -15,6 +16,7 @@
 
   </div>
 </section>
+-->
 
 <!-- All Posts Section -->
 <section id="socialFeed">
@@ -26,44 +28,44 @@
     </div>
     <div class="row">
       <% for (let i=posts.length-1; i>=0; i--) { %>
-        
-        <div class="col">
-          <a href="/postPage/<%= posts[i]._id%>">
-          <div class="card my-2" style="width: 25rem;">
-            <div class="card-header" style="height: 12rem;">
-              <div class="row">
-                <div class="col">
-                  <div class="container">
-                    <img src="<%= posts[i].bookThumbnail %>" alt="<%= posts[i].bookTitle %>" class="img-fluid" style="max-width:80% !important">
-                  </div>
-                </div>
-                <div class="col">
-                  <h4><%= posts[i].bookTitle %></h4>
-                  <span><%= posts[i].bookAuthor %></span>
-                </div>
-              </div>
-            </div>
-            <div class="card-body" style="height: 15rem">
-              <div class="row">
-                <div class="col">
-                  <h5><%= posts[i].post %></h5>
-                  <span>By: <%= posts[i].userName %></span>
-                  <p><%= posts[i].postBody.substring(0,90) %><% if (posts[i].postBody.length > 90){ %>...<%} %></p>
-                </div>
-                <% if (posts[i].image) { %>
+        <% if (posts[i].classroomId === userClassroomId) { %>
+          <div class="col">
+            <a href="/postPage/<%= posts[i]._id%>">
+            <div class="card my-2" style="width: 25rem;">
+              <div class="card-header" style="height: 12rem;">
+                <div class="row">
                   <div class="col">
                     <div class="container">
-                      <img src="<%= posts[i].image %>" alt="<%= posts[i].bookTitle %> project" class="img-fluid">
+                      <img src="<%= posts[i].bookThumbnail %>" alt="<%= posts[i].bookTitle %>" class="img-fluid" style="max-width:80% !important">
                     </div>
                   </div>
+                  <div class="col">
+                    <h4><%= posts[i].bookTitle %></h4>
+                    <span><%= posts[i].bookAuthor %></span>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body" style="height: 15rem">
+                <div class="row">
+                  <div class="col">
+                    <h5><%= posts[i].post %></h5>
+                    <span>By: <%= posts[i].userName %></span>
+                    <p><%= posts[i].postBody.substring(0,90) %><% if (posts[i].postBody.length > 90){ %>...<%} %></p>
+                  </div>
+                  <% if (posts[i].image) { %>
+                    <div class="col">
+                      <div class="container">
+                        <img src="<%= posts[i].image %>" alt="<%= posts[i].bookTitle %> project" class="img-fluid">
+                      </div>
+                    </div>
 
-                <% } %>
+                  <% } %>
+                </div>
               </div>
             </div>
+            </a>
           </div>
-          </a>
-        </div>
-
+        <% } %>
       <% } %>
     </div>
   </div>
